@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Document 
+        link(rel="stylesheet", href="../css/style.css")
+    body
+    
+     div.c.c-100
+      div.flex-center-column
+       div.card.shadow.mr-24.c.c-r-58
+        div.card-body
+         h4="Create"
+         form(action="/create" method="POST")
+          label(for="name")='Name'
+          input.in-border(type="text" id="name" name="name")
+          button.btn.b-primary(type="button" id='sum')='Sumbit'
+     
+     script.
+      document.getElementById('sum').addEventListener('click',()=>{
+        
+          fetch('/',{
+                   method:'POST',
+                   mode:'cors',
+                   headers:{
+                       'Content-Type': 'application/json'
+                   },
+                   body:JSON.stringify({
+                       name:document.getElementById('name').value
+                   })
+               }).then(res=> {
+                   window.location.href = '/view';
+               })
+               .then(data=>{
+                    })
+           
+           
+      })
+     

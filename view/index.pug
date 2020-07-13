@@ -1,0 +1,31 @@
+html
+  head
+    title= 'Hello'
+    link(rel="stylesheet", href="../css/style.css")
+  body
+  html
+  body
+    div.container.pa-4
+      a.btn.b-primary.text-decoration-none(href="/view"  )='Home'
+      a.btn.b-primary.text-decoration-none(href="/create"  )='Create'
+  div(class="fc c-100 flex-center-column" )
+    div(class="c c-r-58 " )
+       table.table.table-striped
+        tr
+          th Name
+          th Created
+          th Action
+
+          each val in datas
+            tr
+              td= val.name
+              td= new Date(val.created).toDateString()
+              td 
+                 a.btn.btn-sm.b-primary.text-decoration-none.b-primary(href=`edit/${val._id}`)='Edit'
+                 a.btn.btn-sm.b-primary.text-decoration-none.b-danger(href=`delete/${val._id}`)='Delete'
+
+  
+
+
+
+    
